@@ -58,4 +58,4 @@ Setting -> Build, Execution, Deployment ->Debugger ->Stepping -> javax和java勾
 
 ## 图解
 
-![image-20220416022506269](/Users/chenyonglin/Library/Application Support/typora-user-images/image-20220416022506269.png)
+![image-20220416022506269](picture/image-20220416022506269.png)
