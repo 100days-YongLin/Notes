@@ -347,7 +347,87 @@ List<User> users = userMapper.selectAll();
 
 # 核心配置文件
 
+mybatis-config.xml
+
+1. 可以配置不同的服务器信息，通过id区分，只需要更改environment就可以了
+
+```xml
+<configuration>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED"> <!--数据库连接池-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://10.211.55.102/mybatis?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+
+        <environment id="test">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://10.211.55.102/mybatis?useSSL=false"/>
+                <property name="username" value="root"/>
+                <property name="password" value="123456"/>
+            </dataSource>
+        </environment>
+    </environments>
+```
+
+2. mappers（这个之前讲过了，就先不讲了）
+
+   ```xml
+   <mappers>
+       <!--加载sql映射文件-->
+       <mapper resource="com/chyl/mapper/UserMapper.xml"/>
+   </mappers>
+   ```
+
+3. 别名
+
+   这样在xml文件中，写包名就不需要写全名了，只需要写user或者User，不区分大小写
+
+   ```xml
+   <typeAliases>
+     <package name="com.chyl.pojo.User"/>
+   </typeAliases>
+   ```
+
+4. xml约束：这些标签有前后顺序
+
+   <img src="picture/image-20220930144907850.png" alt="image-20220930144907850" style="zoom: 50%;" />
+
+
+
 # 配置文件完成CRUD
+
+## 案例
+
+完成品牌数据的增删改查
+
+
+
+## 准备环境
+
+1. 数据库表tb_brand
+
+2. 实体类Brand
+
+3. 测试用例
+
+4. 安装MyBatisX插件
+
+   MyBatisX是一款基于IDEA的快速开发插件，为效率而生
+
+   主要功能：1. XML和接口方法相互跳转   2. 根据接口方法生成statement（sql语句xml文件）
+
+   <img src="picture/image-20220930150045589.png" alt="image-20220930150045589" style="zoom:50%;" />
+
+
+
+
 
 # 注解完成CRUD
 
