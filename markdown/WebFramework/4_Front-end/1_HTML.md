@@ -364,3 +364,112 @@ form：
 
 
 ![image-20221001034241876](picture/image-20221001034241876.png)
+
+# 表单项标签
+
+\<input> 表单项，通过type属性控制输入形式
+
+\<select> 定义下拉列表，\<option>定义列表项
+
+\<textarea> 文本域
+
+![image-20221005134916729](picture/image-20221005134916729.png)
+
+
+
+**案例**
+
+1、标签和文本框
+
+```html
+<body>
+    <form action="#" method="post">
+        <label for="username">用户名：</label>
+        <input type="text" name="username" id="username"><br>
+        <label for="password">密码：</label>
+        <input type="password" name="password" id="password"><br>
+        <br>
+        <input type="submit" value="免费注册">
+    </form>
+</body>
+```
+
+注意：
+
+这里的赋予了for属性，目的是点击相应的 label 焦点会到达相应的编辑框内
+
+![image-20221005140100225](picture/image-20221005140100225.png)
+
+
+
+2、单选框
+
+```xml
+<input type="radio" name="gender" value="1" id="male"> <label for="male">男</label>
+<input type="radio" name="gender" value="2" id="female"> <label for="female">女</label>
+```
+
+<img src="picture/image-20221005140721517.png" alt="image-20221005140721517" style="zoom:50%;" />
+
+两个单选框赋予同一个name属性，就会是一组的
+
+赋予分别的id，就可以与标签关联
+
+提交表单的时候，值就是对应的valuew
+
+
+
+3、复选框
+
+```xml
+爱好：
+<input type="checkbox" name="hobby" value="1"> 电影
+<input type="checkbox" name="hobby" value="1"> 游戏
+<input type="checkbox" name="hobby" value="1"> 音乐
+<input type="checkbox" name="hobby" value="1"> 篮球
+<input type="checkbox" name="hobby" value="1"> 足球
+```
+
+<img src="picture/image-20221005141108588.png" alt="image-20221005141108588" style="zoom:50%;" />
+
+
+
+4、文件 按钮
+
+```xml
+头像：
+<input type="file">
+<br>
+<input type="reset" value="重置表单">
+<input type="button" value="普通按钮">
+<input type="submit" value="免费注册">
+```
+
+![image-20221005141655178](picture/image-20221005141655178.png)
+
+
+
+5、选择框
+
+```xml
+城市：
+<select name="city">
+    <option value="sh">上海</option>
+    <option value="bj">北京</option>
+    <option value="sz">深圳</option>
+</select>
+<br>
+```
+
+<img src="picture/image-20221005141908358.png" alt="image-20221005141908358" style="zoom:50%;" />
+
+
+
+6、多行输入框
+
+```xml
+个人描述：
+<textarea cols="5" rows="2" name="desc"></textarea>
+```
+
+![image-20221005142059949](picture/image-20221005142059949.png)
